@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — StrumStart</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/darkmode.css">
+</head>
+<body data-page="lessons">
+
+<main>
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-meta"><span class="badge">Bonus</span><span>⏱ 2 min</span></div>
+      <h1>Resources</h1>
+      <p style="max-width:600px;">Free tools worth bookmarking once you're past the basics in this guide.</p>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <div class="container">
+
+      <div class="grid-3 reveal">
+        <div class="feature-card">
+          <h3>📺 Video lessons</h3>
+          <p>JustinGuitar offers a complete free beginner course with structured video lessons.</p>
+          <a class="btn btn-ghost btn-sm" style="margin-top:10px;" href="https://www.justinguitar.com" target="_blank" rel="noopener">justinguitar.com →</a>
+        </div>
+        <div class="feature-card">
+          <h3>📱 Practice app</h3>
+          <p>Yousician gamifies daily practice with real-time listening feedback.</p>
+          <a class="btn btn-ghost btn-sm" style="margin-top:10px;" href="https://www.yousician.com" target="_blank" rel="noopener">yousician.com →</a>
+        </div>
+        <div class="feature-card">
+          <h3>🎼 Chord library</h3>
+          <p>Ultimate Guitar hosts an enormous searchable database of chords and tabs for real songs.</p>
+          <a class="btn btn-ghost btn-sm" style="margin-top:10px;" href="https://www.ultimate-guitar.com" target="_blank" rel="noopener">ultimate-guitar.com →</a>
+        </div>
+        <div class="feature-card">
+          <h3>🎯 Online tuner</h3>
+          <p>Any browser-based tuner works well — search for one and allow microphone access.</p>
+          <a class="btn btn-ghost btn-sm" style="margin-top:10px;" href="https://www.google.com/search?q=online+guitar+tuner" target="_blank" rel="noopener">Find a tuner →</a>
+        </div>
+        <div class="feature-card">
+          <h3>⏱ Metronome</h3>
+          <p>Use the built-in metronome on the Strumming Patterns lesson, or a dedicated app for finer control.</p>
+          <a class="btn btn-ghost btn-sm" style="margin-top:10px;" href="strumming.html">Open metronome →</a>
+        </div>
+        <div class="feature-card">
+          <h3>🖨 Printable summary</h3>
+          <p>Print this page (Ctrl/Cmd + P) to keep a quick physical reference of your chord library nearby.</p>
+          <a class="btn btn-ghost btn-sm" style="margin-top:10px;" href="chords.html">Open chord library →</a>
+        </div>
+      </div>
+
+      <h2 style="margin-top:50px;">FAQ recap</h2>
+      <div class="reveal">
+        <div class="faq-item">
+          <div class="faq-q">How long does it take to learn?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          <div class="faq-a"><p>Most beginners can play a simple song within 3–4 weeks of practicing 15 minutes a day.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Should I use a pick?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+          <div class="faq-a"><p>Either works — try both during the Strumming lesson and see what feels natural to you.</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="lesson-nav">
+      <a href="feedback.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Feedback</a>
+      <a href="../index.html">Back to Home <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </nav>
+  </div>
+</main>
+
+<script src="../js/app.js"></script>
+<script src="../js/darkmode.js"></script>
+<script>
+  document.querySelectorAll(".faq-q").forEach(q => {
+    q.addEventListener("click", () => q.closest(".faq-item").classList.toggle("open"));
+  });
+</script>
+</body>
+</html>

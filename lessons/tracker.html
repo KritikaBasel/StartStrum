@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Tracker — StrumStart</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/darkmode.css">
+</head>
+<body data-page="tracker">
+
+<main>
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-meta"><span class="badge">Lesson 9 of 10</span><span>⏱ 2 min</span></div>
+      <h1>Practice Tracker</h1>
+      <p style="max-width:600px;">Log every practice session and watch your streak grow. Everything here is saved right in this browser — no account needed.</p>
+      <div class="progress-track"><div class="fill" id="tracker-progress-fill" style="width:0%"></div></div>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <div class="container">
+
+      <div class="tracker-summary reveal">
+        <div class="stat-card"><div class="num" id="stat-days">0</div><div class="lbl">Days practiced</div></div>
+        <div class="stat-card"><div class="num" id="stat-streak">0</div><div class="lbl">Longest streak</div></div>
+        <div class="stat-card"><div class="num" id="stat-stars">0.0</div><div class="lbl">Average stars</div></div>
+      </div>
+
+      <h2>Your 30-day calendar</h2>
+      <p>Click any day to log it and rate how the session went from 1–5 stars.</p>
+      <div class="calendar-grid reveal" id="calendar-grid"></div>
+
+      <h2>Achievements</h2>
+      <div class="badge-grid reveal" id="achievement-grid"></div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="lesson-nav">
+      <a href="quiz.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Beginner Quiz</a>
+      <a href="feedback.html">Next: Feedback <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </nav>
+  </div>
+</main>
+
+<script src="../js/app.js"></script>
+<script src="../js/darkmode.js"></script>
+<script src="../js/tracker.js"></script>
+</body>
+</html>

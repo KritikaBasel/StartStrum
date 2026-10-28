@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chord Diagrams &amp; First Chords — StrumStart</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/darkmode.css">
+</head>
+<body data-page="lessons">
+
+<main>
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-meta"><span class="badge">Lesson 5 of 10</span><span>⏱ 11 min read</span></div>
+      <h1>Reading Chord Diagrams &amp; Your First Chords</h1>
+      <p style="max-width:640px;">This is the lesson everything else builds on. First you'll learn to read a chord diagram, then you'll meet the five chords that unlock most beginner songs.</p>
+      <div class="progress-track"><div class="fill" style="width:0%"></div></div>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <div class="container">
+
+      <h2>What each part of a diagram means</h2>
+      <div class="grid-3 reveal">
+        <div class="feature-card">
+          <h3>● Dot</h3>
+          <p>Press that string at that fret with a finger. The number inside tells you which finger to use.</p>
+        </div>
+        <div class="feature-card">
+          <h3>○ Open circle</h3>
+          <p>Play that string without pressing any fret — let it ring open.</p>
+        </div>
+        <div class="feature-card">
+          <h3>× Cross</h3>
+          <p>Don't play that string at all — mute it or skip it while strumming.</p>
+        </div>
+      </div>
+
+      <div class="callout reveal">
+        <strong>Finger numbers:</strong> 1 = index, 2 = middle, 3 = ring, 4 = pinky. Diagrams are read left to right as the thick low-E string to the thin high-E string — same order as when you look down at the guitar in playing position.
+      </div>
+
+      <h2 id="chord-viewer-heading">Try it: interactive chord viewer</h2>
+      <p>Click a chord name to see its full diagram, difficulty, and the mistakes beginners make most often.</p>
+
+      <div id="chord-viewer" class="reveal">
+        <div class="chord-grid">
+          <div class="chord-chip" data-chord="C"><div class="name">C</div><div class="diff">Major</div></div>
+          <div class="chord-chip" data-chord="G"><div class="name">G</div><div class="diff">Major</div></div>
+          <div class="chord-chip" data-chord="Am"><div class="name">Am</div><div class="diff">Minor</div></div>
+          <div class="chord-chip" data-chord="Em"><div class="name">Em</div><div class="diff">Minor</div></div>
+          <div class="chord-chip" data-chord="D"><div class="name">D</div><div class="diff">Major</div></div>
+        </div>
+
+        <div class="chord-detail">
+          <div>
+            <div id="viewer-diagram"></div>
+            <span id="viewer-diff" class="diff-tag"></span>
+          </div>
+          <div>
+            <h3 id="viewer-name"></h3>
+            <p style="margin-top:6px;"><strong style="color:var(--navy)">Common mistakes</strong></p>
+            <ul class="tips-list" id="viewer-tips"></ul>
+          </div>
+        </div>
+      </div>
+
+      <h2>Your five first chords</h2>
+      <p>These five chords appear in an enormous share of beginner-friendly songs. Learn them well and you'll already be able to strum along to hundreds of tracks. Each card below has its own 2-minute practice timer — use it.</p>
+
+      <div id="chord-cards"></div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="lesson-nav">
+      <a href="tuning.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Tuning</a>
+      <a href="strumming.html">Next: Strumming Patterns <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </nav>
+  </div>
+</main>
+
+<script src="../js/app.js"></script>
+<script src="../js/darkmode.js"></script>
+<script src="../js/chords.js"></script>
+</body>
+</html>

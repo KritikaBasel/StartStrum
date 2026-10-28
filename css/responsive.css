@@ -1,0 +1,48 @@
+/* =========================================================
+   RESPONSIVE — tablet & mobile
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .hero .container { grid-template-columns: 1fr; }
+  .hero-visual { order: -1; max-width: 380px; margin: 0 auto; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .chord-grid { grid-template-columns: repeat(4, 1fr); }
+  footer.site-footer .foot-grid { grid-template-columns: 1fr 1fr; }
+  .chord-detail { grid-template-columns: 220px 1fr; gap: 24px; }
+}
+
+@media (max-width: 768px) {
+  body { padding-left: 0; padding-bottom: 64px; }
+
+  .sidebar {
+    top: auto; bottom: 0; left: 0; right: 0; height: 64px; width: 100%;
+    flex-direction: row; padding: 0 10px; justify-content: space-between;
+  }
+  .sidebar .logo-mark { display: none; }
+  .sidebar nav { flex-direction: row; flex: 1; justify-content: space-around; }
+  .sidebar a .tip { display: none; }
+
+  .topbar { padding: 10px 18px; flex-wrap: wrap; }
+  .search-box { width: 140px; order: 3; }
+
+  .grid-3, .grid-2, .dnd-zone { grid-template-columns: 1fr; }
+  .chord-grid { grid-template-columns: repeat(3, 1fr); }
+  .chord-detail { grid-template-columns: 1fr; }
+  .badge-grid { grid-template-columns: repeat(2, 1fr); }
+  footer.site-footer .foot-grid { grid-template-columns: 1fr; gap: 22px; }
+  footer.site-footer .foot-bottom { flex-direction: column; gap: 8px; }
+  .tracker-summary { grid-template-columns: 1fr; }
+  .calendar-grid { gap: 5px; }
+  .cal-day { font-size: 0.66rem; }
+  .back-to-top { bottom: 78px; }
+  .hero { padding: 40px 0 30px; }
+  .roadmap-step { min-width: 130px; }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 18px; }
+  .chord-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero .cta-row { flex-direction: column; }
+  .hero .cta-row .btn { width: 100%; justify-content: center; }
+  .timer-widget { flex-direction: column; align-items: flex-start; }
+}

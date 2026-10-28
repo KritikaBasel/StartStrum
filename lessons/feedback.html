@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback — StrumStart</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/darkmode.css">
+</head>
+<body data-page="feedback">
+
+<main>
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-meta"><span class="badge">Lesson 10 of 10</span><span>⏱ 3 min</span></div>
+      <h1>Feedback</h1>
+      <p style="max-width:600px;">You made it through the guide. Tell us how it went — this feedback shapes what gets improved next.</p>
+      <div class="progress-track"><div class="fill" style="width:100%"></div></div>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <div class="container">
+
+      <form class="feedback-form reveal" id="feedback-form">
+        <div class="field-group">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" name="name" placeholder="Your name" required>
+        </div>
+
+        <div class="field-group">
+          <label for="f-experience">Prior guitar experience</label>
+          <select id="f-experience" name="experience">
+            <option value="none">Complete beginner</option>
+            <option value="some">Tried before, didn't stick with it</option>
+            <option value="returning">Returning after a long break</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label for="f-easy">What was easy?</label>
+          <textarea id="f-easy" name="easy" placeholder="e.g. Reading chord diagrams made sense right away"></textarea>
+        </div>
+
+        <div class="field-group">
+          <label for="f-difficult">What was difficult?</label>
+          <textarea id="f-difficult" name="difficult" placeholder="e.g. Switching between C and Am quickly"></textarea>
+        </div>
+
+        <div class="field-group">
+          <label for="f-suggestions">Suggestions</label>
+          <textarea id="f-suggestions" name="suggestions" placeholder="Anything you wish the guide covered?"></textarea>
+        </div>
+
+        <div class="field-group">
+          <label>Overall rating</label>
+          <div class="star-rating" id="star-rating">
+            <span data-value="1">★</span><span data-value="2">★</span><span data-value="3">★</span><span data-value="4">★</span><span data-value="5">★</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+      </form>
+
+      <div class="feedback-success" id="feedback-success">
+        <div class="icon">🎉</div>
+        <h2>Thanks for the feedback!</h2>
+        <p>It's saved locally in this browser. Ready for more resources, or want to head back and keep practicing?</p>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:18px;">
+          <a href="resources.html" class="btn btn-outline btn-sm">Browse resources</a>
+          <a href="tracker.html" class="btn btn-primary btn-sm">Back to practice tracker</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="lesson-nav">
+      <a href="tracker.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Practice Tracker</a>
+      <a href="resources.html">Next: Resources <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </nav>
+  </div>
+</main>
+
+<script src="../js/app.js"></script>
+<script src="../js/darkmode.js"></script>
+<script src="../js/feedback.js"></script>
+</body>
+</html>

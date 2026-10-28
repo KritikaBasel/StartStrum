@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tuning the Guitar — StrumStart</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/darkmode.css">
+<style>
+  .string-row { display:flex; gap:12px; flex-wrap:wrap; margin: 26px 0; }
+  .string-btn {
+    flex: 1; min-width: 90px; background: var(--white); border: 1.5px solid var(--line); border-radius: var(--radius-sm);
+    padding: 18px 10px; text-align:center; cursor:pointer; transition: all var(--transition);
+  }
+  .string-btn:hover, .string-btn.playing { border-color: var(--coral); background: var(--cream); transform: translateY(-3px); }
+  .string-btn .note { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; color: var(--navy); }
+  .string-btn .num { font-size: 0.7rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.04em; }
+  .string-btn .hz { font-size: 0.7rem; color: var(--ink-soft); margin-top:4px; }
+</style>
+</head>
+<body data-page="lessons">
+
+<main>
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-meta"><span class="badge">Lesson 4 of 10</span><span>⏱ 5 min read</span></div>
+      <h1>Tuning the Guitar</h1>
+      <p style="max-width:600px;">A guitar that's out of tune makes every chord sound wrong, even when your fingers are perfect. Tune up before every practice session.</p>
+      <div class="progress-track"><div class="fill" style="width:0%"></div></div>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <div class="container">
+
+      <h2>Standard tuning: E A D G B E</h2>
+      <p>From the thickest string to the thinnest, standard tuning is <strong>E – A – D – G – B – E</strong>. Click each string below to hear its target pitch, then tune your matching string up or down until it matches.</p>
+
+      <div class="string-row reveal" id="string-row">
+        <div class="string-btn" data-freq="82.41" data-note="E"><div class="note">E</div><div class="num">6th string · thickest</div><div class="hz">82.4 Hz</div></div>
+        <div class="string-btn" data-freq="110.00" data-note="A"><div class="note">A</div><div class="num">5th string</div><div class="hz">110.0 Hz</div></div>
+        <div class="string-btn" data-freq="146.83" data-note="D"><div class="note">D</div><div class="num">4th string</div><div class="hz">146.8 Hz</div></div>
+        <div class="string-btn" data-freq="196.00" data-note="G"><div class="note">G</div><div class="num">3rd string</div><div class="hz">196.0 Hz</div></div>
+        <div class="string-btn" data-freq="246.94" data-note="B"><div class="note">B</div><div class="num">2nd string</div><div class="hz">246.9 Hz</div></div>
+        <div class="string-btn" data-freq="329.63" data-note="E"><div class="note">E</div><div class="num">1st string · thinnest</div><div class="hz">329.6 Hz</div></div>
+      </div>
+
+      <div class="callout reveal">
+        <strong>Tip:</strong> Tune "up to pitch" rather than down — if a string is flat, tighten it past the target slightly and settle down into place. This keeps tension more stable.
+      </div>
+
+      <h2>If you don't trust your ear yet</h2>
+      <p>That's completely normal starting out. A clip-on electronic tuner (attaches to the headstock and reads pitch visually) or a tuner app removes the guesswork entirely — most beginners use one for their first several months.</p>
+      <a class="btn btn-ghost btn-sm" href="https://www.google.com/search?q=online+guitar+tuner" target="_blank" rel="noopener">Find an online tuner →</a>
+
+      <h2>Practice tips</h2>
+      <ul>
+        <li>Tune every single time you pick up the guitar — strings drift, especially on new ones.</li>
+        <li>Retune after your first 10 minutes of playing; new strings stretch and go flat quickly.</li>
+        <li>Turn pegs in small movements. A little turn changes pitch more than you'd expect.</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="lesson-nav">
+      <a href="posture.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Holding the Guitar</a>
+      <a href="chords.html">Next: Chords &amp; First Chords <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </nav>
+  </div>
+</main>
+
+<script src="../js/app.js"></script>
+<script src="../js/darkmode.js"></script>
+<script>
+  // Simple reference-tone player using the Web Audio API
+  let audioCtx;
+  document.querySelectorAll(".string-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = "sine";
+      osc.frequency.value = parseFloat(btn.dataset.freq);
+      gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.6);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 1.6);
+      btn.classList.add("playing");
+      setTimeout(() => btn.classList.remove("playing"), 1600);
+    });
+  });
+</script>
+</body>
+</html>

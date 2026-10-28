@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strumming Patterns — StrumStart</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/darkmode.css">
+<style>
+  .pattern-row { display:flex; gap:14px; align-items:center; margin: 20px 0 30px; flex-wrap:wrap; }
+  .arrow-step {
+    width: 52px; height: 52px; border-radius: 12px; background: var(--white); border: 1.5px solid var(--line);
+    display:flex; align-items:center; justify-content:center; font-size:1.4rem; color: var(--navy); transition: all 150ms ease;
+  }
+  .arrow-step.active { background: var(--coral); color:white; border-color: var(--coral); transform: scale(1.12); }
+  .metronome-box {
+    background: var(--navy); color: white; border-radius: var(--radius); padding: 26px 30px; margin: 30px 0;
+    display:flex; align-items:center; gap: 26px; flex-wrap:wrap;
+  }
+  .metronome-box .bpm-display { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; min-width:120px; }
+  .metronome-box input[type=range] { width: 180px; }
+  .beat-dot { width: 14px; height:14px; border-radius:50%; background: rgba(255,255,255,0.25); display:inline-block; margin-right:6px; transition: background 100ms ease; }
+  .beat-dot.on { background: var(--sand); }
+</style>
+</head>
+<body data-page="lessons">
+
+<main>
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-meta"><span class="badge">Lesson 6 of 10</span><span>⏱ 6 min read</span></div>
+      <h1>Strumming Patterns</h1>
+      <p style="max-width:600px;">Chords give you the notes; strumming gives you the rhythm. Start slow — timing matters more than speed.</p>
+      <div class="progress-track"><div class="fill" style="width:0%"></div></div>
+    </div>
+  </header>
+
+  <div class="lesson-body">
+    <div class="container">
+
+      <h2>The three basic motions</h2>
+
+      <h3>Down strum (D)</h3>
+      <p>Your hand moves downward across the strings, from thickest to thinnest. This is the first motion every beginner learns.</p>
+      <div class="pattern-row reveal" data-pattern="D,-,D,-,D,-,D,-">
+        <div class="arrow-step">↓</div><div class="arrow-step">·</div><div class="arrow-step">↓</div><div class="arrow-step">·</div>
+        <div class="arrow-step">↓</div><div class="arrow-step">·</div><div class="arrow-step">↓</div><div class="arrow-step">·</div>
+        <button class="btn btn-ghost btn-sm play-pattern">▶ Play at 80 BPM</button>
+      </div>
+
+      <h3>Up strum (U)</h3>
+      <p>Your hand moves upward, thinnest to thickest — lighter and quieter than a down strum. Rarely used alone; it's what fills the gaps between downs.</p>
+      <div class="pattern-row reveal" data-pattern="-,U,-,U,-,U,-,U">
+        <div class="arrow-step">·</div><div class="arrow-step">↑</div><div class="arrow-step">·</div><div class="arrow-step">↑</div>
+        <div class="arrow-step">·</div><div class="arrow-step">↑</div><div class="arrow-step">·</div><div class="arrow-step">↑</div>
+        <button class="btn btn-ghost btn-sm play-pattern">▶ Play at 80 BPM</button>
+      </div>
+
+      <h3>Down-Up (DU) — the workhorse pattern</h3>
+      <p>Most beginner songs use a version of this. Try counting "1-and-2-and-3-and-4-and" while your hand keeps moving continuously, down on the number, up on the "and."</p>
+      <div class="pattern-row reveal" data-pattern="D,U,D,U,D,U,D,U">
+        <div class="arrow-step">↓</div><div class="arrow-step">↑</div><div class="arrow-step">↓</div><div class="arrow-step">↑</div>
+        <div class="arrow-step">↓</div><div class="arrow-step">↑</div><div class="arrow-step">↓</div><div class="arrow-step">↑</div>
+        <button class="btn btn-ghost btn-sm play-pattern">▶ Play at 80 BPM</button>
+      </div>
+
+      <div class="callout reveal">
+        <strong>Keep your hand moving.</strong> Even on the beats you don't strum, let your hand keep swinging down-up-down-up in the air. This "constant motion" habit is what makes strumming feel steady instead of choppy.
+      </div>
+
+      <h2>Practice metronome</h2>
+      <p>Set a tempo and strum along. Starting at 60–80 BPM and building up gradually beats jumping straight to full speed.</p>
+      <div class="metronome-box reveal">
+        <div class="bpm-display" id="bpm-display">80 BPM</div>
+        <input type="range" id="bpm-slider" min="40" max="160" value="80">
+        <button class="btn btn-primary btn-sm" id="metronome-toggle">▶ Start</button>
+        <div id="beat-dots">
+          <span class="beat-dot"></span><span class="beat-dot"></span><span class="beat-dot"></span><span class="beat-dot"></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="lesson-nav">
+      <a href="chords.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg> Chords &amp; First Chords</a>
+      <a href="first-song.html">Next: Your First Song <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </nav>
+  </div>
+</main>
+
+<script src="../js/app.js"></script>
+<script src="../js/darkmode.js"></script>
+<script>
+  // Animate arrows in sequence when "Play pattern" is clicked
+  document.querySelectorAll(".play-pattern").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const row = btn.closest(".pattern-row");
+      const steps = row.querySelectorAll(".arrow-step");
+      let i = 0;
+      const interval = setInterval(() => {
+        steps.forEach(s => s.classList.remove("active"));
+        if (i < steps.length) { steps[i].classList.add("active"); i++; }
+        else { clearInterval(interval); steps.forEach(s => s.classList.remove("active")); }
+      }, 300);
+    });
+  });
+
+  // Working metronome using Web Audio scheduling
+  let audioCtx, isPlaying = false, timerId, beat = 0, bpm = 80;
+  const bpmSlider = document.getElementById("bpm-slider");
+  const bpmDisplay = document.getElementById("bpm-display");
+  const toggleBtn = document.getElementById("metronome-toggle");
+  const dots = document.querySelectorAll(".beat-dot");
+
+  bpmSlider.addEventListener("input", () => {
+    bpm = Number(bpmSlider.value);
+    bpmDisplay.textContent = bpm + " BPM";
+  });
+
+  function tick() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.frequency.value = beat % 4 === 0 ? 1000 : 700;
+    gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(); osc.stop(audioCtx.currentTime + 0.08);
+
+    dots.forEach((d, idx) => d.classList.toggle("on", idx === beat % 4));
+    beat++;
+    timerId = setTimeout(tick, 60000 / bpm);
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    isPlaying = !isPlaying;
+    if (isPlaying) {
+      toggleBtn.textContent = "■ Stop";
+      beat = 0;
+      tick();
+    } else {
+      toggleBtn.textContent = "▶ Start";
+      clearTimeout(timerId);
+      dots.forEach(d => d.classList.remove("on"));
+    }
+  });
+</script>
+</body>
+</html>
